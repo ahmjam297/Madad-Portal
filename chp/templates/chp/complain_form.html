@@ -1,0 +1,35 @@
+{% extends "chp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+
+                <div class="card-body">
+                    <div class="content">
+                        <main role="main" class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="content-section">
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                            <fieldset class="form-group">
+                                                <legend class="border-bottom mb-4"> Update Complain</legend>
+                                                {{ form|crispy }}
+                                            </fieldset>
+                                            <div class="form-group">
+                                                <button class="btn btn-outline-info" type="submit">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    {% endblock content %}

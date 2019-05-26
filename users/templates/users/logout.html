@@ -1,0 +1,15 @@
+{% extends "chp/base.html" %}
+{% block content %}
+<main role="main" class="container">
+    <div class="row">
+        <!-- Portfolio Item Heading -->
+        <h1 class="my-4">You have been logged out successfully.</h1>
+    </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}"><b>Log In Again</b></a>
+        </small>
+    </div>
+</main>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "chp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xl-6 mx-auto">
+                <div class="card card-signin flex-row my-5">
+
+                    <div class="card-body">
+                        <title>Profile</title>
+                        <div class="content-section">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-4">Complete Your Profile</legend>
+                                    {{ form|crispy }}
+                                </fieldset>
+                                <div class="form-group">
+                                    <button class="btn btn-outline-info" type="submit">Submit Details</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                {% endblock content %}

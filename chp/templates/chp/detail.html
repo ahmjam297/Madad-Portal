@@ -1,0 +1,30 @@
+{% extends 'chp/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-xl-4 mx-auto">
+            <div class="card card-signin flex-row my-5">
+                <div class="card-body">
+                    {% for c in u1 %}
+                    <h3> {{ c.username }}'s details</h3>
+                    <hr>
+                    <div class="media-body">
+                        <p>Username : {{ c.username }}</p>
+                        <p>Full Name : {{ c.first_name }} {{ c.last_name }} </p>
+                        {% endfor %}
+                        {% for d in p1%}
+                        <p>UID : {{ d.UID }}</p>
+                        <p>Gender : {{ d.Gender }}</p>
+                        <p>Residence : {{ d.residence }}</p>
+                        <p>Room No : {{ d.room_no }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                    {% endfor %}
+                    {% endblock content %}

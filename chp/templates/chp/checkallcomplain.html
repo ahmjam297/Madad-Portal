@@ -1,0 +1,26 @@
+{% extends 'chp/base.html' %}
+  {% block content %}
+<div class="content" style="padding: 16px">
+    {% for p in q %}
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-detail' p.complain_user.username %}">Username: {{ p.complain_user }}</a>
+              <small class="text-muted">{{ p.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2>Title: {{ p.complain_subject }}</h2>
+              <hr>
+            <h5 class="article-content">Complain Description: {{ p.complain_description}}</h5>
+              <hr>
+            <h5 class="article-content">Status: {{ p.status }}</h5>
+          </div>
+        </article>
+            </div>
+        </div>
+    </main>
+</div>
+    {% endfor %}
+  {% endblock content %}
